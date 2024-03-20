@@ -1,24 +1,56 @@
 {
-  "name": "karate-site",
+  "name": "site",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "rm -r ./out && next build && next-export-optimize-images && npm run deploy-ftp",
+    "deploy-ftp": "node deploy-ftp.mjs",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.{ts,tsx,js,jsx}' --write"
   },
   "dependencies": {
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.3",
+    "@emotion/server": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.10",
+    "@mui/material": "^5.15.6",
+    "@mui/material-nextjs": "^5.15.6",
+    "axios": "^1.6.7",
+    "basic-ftp": "^5.0.4",
+    "dotenv": "^16.4.5",
+    "formik": "^2.4.5",
+    "formik-mui": "^5.0.0-alpha.0",
+    "modern-normalize": "^2.0.0",
+    "next": "14.1.0",
+    "next-export-optimize-images": "^3.3.0",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.0"
+    "react-lottie": "^1.2.4",
+    "swiper": "^11.0.6",
+    "yup": "^1.3.3"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@next/bundle-analyzer": "^14.1.3",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@types/react-lottie": "^1.2.10",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
     "eslint": "^8",
-    "eslint-config-next": "14.1.0"
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-next": "14.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-react": "^7.34.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.2.4",
+    "typescript": "^5"
   }
 }
