@@ -1,49 +1,57 @@
-import { css } from '@emotion/react';
-import { Theme } from '@mui/material';
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
+
+export const semibold = css`
+  font-weight: 500;
+`;
 
 export const bold = css`
   font-weight: 600;
 `;
 
 export const desktop = (theme: Theme) => css`
-  ${theme.breakpoints.down('md')} {
+  ${theme.breakpoints.down("md")} {
     display: none;
   }
 `;
 
 export const mobile = (theme: Theme) => css`
-  ${theme.breakpoints.up('md')} {
+  ${theme.breakpoints.up("md")} {
     display: none;
   }
 `;
 
 export const outletPadding = (theme: Theme) => css`
-  ${theme.breakpoints.up('sm')} {
-    padding: 8% 5%;
+  ${theme.breakpoints.up("sm")} {
+    padding: 5%;
   }
 
-  ${theme.breakpoints.down('sm')} {
+  ${theme.breakpoints.down("sm")} {
     padding: 30px 15px;
   }
 `;
 
 export const layoutPadding = (theme: Theme) => css`
-  ${theme.breakpoints.up('sm')} {
+  ${theme.breakpoints.up("lg")} {
     padding: 2% 5%;
   }
 
-  ${theme.breakpoints.down('sm')} {
+  ${theme.breakpoints.between("sm", "lg")} {
+    padding: 2%;
+  }
+
+  ${theme.breakpoints.down("sm")} {
     padding: 15px;
   }
 `;
 
-export const layoutMargin = (theme: Theme) => css`
-  ${theme.breakpoints.up('sm')} {
-    margin: 8% 0px;
+export const outletMargin = (theme: Theme) => css`
+  ${theme.breakpoints.up("sm")} {
+    margin: 5% 0%;
   }
 
-  ${theme.breakpoints.down('sm')} {
-    margin: 30px 0px;
+  ${theme.breakpoints.down("sm")} {
+    margin: 15px 0px;
   }
 `;
 

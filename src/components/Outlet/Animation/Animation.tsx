@@ -1,35 +1,32 @@
-import Link from 'next/link';
-import Lottie from 'react-lottie';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
-import * as classes from './styles';
+import Link from "next/link";
+import Lottie from "react-lottie";
+import * as generalClasses from "@/styles/general";
+import * as classes from "./styles";
 
 interface Props {
   // This type is defined in 'react-lottie' docs
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   animationData: any;
+  path: string;
   className?: string;
 }
 
-export default function Animation({ className, animationData }: Props) {
-  const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up('sm'));
-
+export default function Animation({ className, animationData, path }: Props) {
   const DEFAULT_OPTIONS = {
     autoplay: true,
     animationData,
     loop: true,
   };
 
-  return isDesktop ? (
+  return (
     <Link
       className={className}
-      css={classes.animationBox}
-      // TODO: Add your path
-      href='/'>
+      css={[classes.animationBox, generalClasses.desktop]}
+      href={path}
+    >
       <Lottie options={DEFAULT_OPTIONS} />
     </Link>
-  ) : null;
+  );
 }
 
 Animation.defaultProps = {
