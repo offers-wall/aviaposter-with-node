@@ -1,4 +1,5 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
+import CookieConsent from "@/components/CookiesConsent";
 // TODO: Uncomment after adding Header and Footer
 // import Footer from './Footer';
 // import Header from './Header';
@@ -12,6 +13,7 @@ export default function Layout({ children }: Props) {
       {/* <Header /> */}
       <main>{children}</main>
       {/* <Footer /> */}
+      <CookieConsent />
     </div>
   );
 }
