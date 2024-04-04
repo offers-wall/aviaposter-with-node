@@ -22,7 +22,7 @@ export default function CookiesConsent() {
       }}
       onAccept={() => {}}
     >
-      {cookiesConsentData.text}
+      {cookiesConsent.text}
     </CookieConsent>
   );
 }
