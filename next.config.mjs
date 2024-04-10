@@ -14,9 +14,6 @@ const nextConfig = withExportImages({
       "swiper",
     ],
   },
-  images: {
-    deviceSizes: [600, 750, 950, 1080, 1200, 1536, 2048, 3840],
-  },
   // TODO: Uncomment it for static export - https://nextjs.org/docs/app/building-your-application/deploying/static-exports
   // output: 'export',
 });
