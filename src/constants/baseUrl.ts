@@ -1,3 +1,3 @@
-const baseUrl = 'rest.php/';
+const baseUrl = "rest.php";
 
 export default baseUrl;
