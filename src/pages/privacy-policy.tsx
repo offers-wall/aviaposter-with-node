@@ -1,3 +1,8 @@
+// TODO: Add Privacy Policy
 export default function PrivacyPolicy() {
-  return <section>Privacy Policy</section>;
+  return (
+    <main>
+      <section>Privacy Policy</section>
+    </main>
+  );
 }
