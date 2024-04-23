@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-// eslint-disable-next-line import/no-extraneous-dependencies
 import withExportImages from "next-export-optimize-images";
 
 const nextConfig = withExportImages({
