@@ -3,8 +3,7 @@ export interface CookiesConsent {
   text: string;
 }
 
-// TODO: Fill out data
 export const cookiesConsent: CookiesConsent = {
-  button: "",
-  text: "",
+  button: "I understand",
+  text: "This website uses cookies to improve user experience",
 };
