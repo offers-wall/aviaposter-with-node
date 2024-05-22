@@ -1,4 +1,4 @@
-#Basic Next.js Template
+# Basic Next.js Template
 
 ## Scripts
 
