@@ -6,7 +6,6 @@ The project includes the following scripts that can be executed:
 
 - `dev`: Launches the development mode using Vite.
 - `build`: Compiles TypeScript, builds project, optimazes images, creates nginx-routes and deploys on testing [FTP server](https://mari.appotrack.space/).
-- `serve`: Launches a server to deploy the built project.
 - `deploy-ftp`: Deploys on testing [FTP server](https://mari.appotrack.space/).
 - `lint`: Runs ESLint to check the code style.
 - `preview`: Launches a preview using Vite.
