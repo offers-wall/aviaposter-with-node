@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-     "build": "next build && next-export-optimize-images && next-nginx-routes && npm run deploy-ftp",
+    "build": "next build && next-export-optimize-images && next-nginx-routes && npm run deploy-ftp",
     "deploy-ftp": "node deploy-ftp.mjs",
     "start": "next start",
     "lint": "next lint",
