@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-     "build": "next build && next-export-optimize-images && next-nginx-routes && npm run deploy-ftp",
+    "build": "next build && next-export-optimize-images && next-nginx-routes && npm run deploy-ftp",
     "deploy-ftp": "node deploy-ftp.mjs",
     "start": "next start",
     "lint": "next lint",
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
-    "@emotion/react": "^11.11.3",
+    "@emotion/react": "^11.11.4",
     "@emotion/server": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.10",
@@ -35,7 +35,6 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^14.1.3",
-    "next-nginx-routes": "^1.2.1",
     "@types/node": "^20",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
@@ -52,6 +51,7 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-react": "^7.34.0",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "next-nginx-routes": "^1.2.1",
     "prettier": "^3.2.4",
     "typescript": "^5"
   }
