@@ -8,8 +8,22 @@ import Layout from '@/components/Layout';
 import theme from '@/constants/theme';
 import meta from '@/constants/meta';
 
+//TODO If you need animation, uncomment (site with animations https://michalsnik.github.io/aos/)
+
+// import AOS from 'aos';
+// import 'aos/dist/aos.css';
+// import { useEffect } from 'react';
+
 export default function MyApp(props: AppProps) {
   const { Component, pageProps } = props;
+
+  // useEffect(() => {
+  //   AOS.init({
+  //     easing: 'ease-out-cubic',
+  //     once: true,
+  //     offset: 50,
+  //   });
+  // }, []);
 
   return (
     <AppCacheProvider {...props}>
