@@ -24,7 +24,7 @@ export default function MyApp(props: AppProps) {
           name='description'
         />
         <link
-          href={meta.canonical}
+          href={process.env.NEXT_SITE_URL}
           rel='canonical'
         />
         <title>{meta.title}</title>
