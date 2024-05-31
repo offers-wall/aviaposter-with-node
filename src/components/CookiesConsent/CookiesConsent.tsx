@@ -1,27 +1,19 @@
-import CookieConsent from 'react-cookie-consent';
-import { useTheme } from '@mui/material/styles';
-import { cookiesConsent } from './cookiesConsentData';
+import { useEffect } from 'react';
+import * as CookieConsent from 'vanilla-cookieconsent';
+import pluginConfig from './CookieConsentConfig';
+import 'vanilla-cookieconsent/dist/cookieconsent.css';
+import Button from '../Outlet/Button';
 
 export default function CookiesConsent() {
-  const theme = useTheme();
+  useEffect(() => {
+    CookieConsent.run(pluginConfig);
+  }, []);
 
   return (
-    <CookieConsent
-      buttonText={cookiesConsent.button}
-      buttonStyle={{
-        backgroundColor: theme.palette.primary.main,
-        borderRadius: '4px',
-        fontSize: '16px',
-      }}
-      cookieName='user_preferences'
-      expires={30}
-      location='bottom'
-      style={{
-        background: theme.palette.text.secondary,
-        color: theme.palette.text.primary,
-      }}
-      onAccept={() => {}}>
-      {cookiesConsent.text}
-    </CookieConsent>
+    <Button
+      text='Show Cookie Preferences'
+      href='#'
+      onClick={CookieConsent.showPreferences}
+    />
   );
 }

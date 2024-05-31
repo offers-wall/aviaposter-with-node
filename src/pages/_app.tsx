@@ -8,7 +8,7 @@ import Layout from '@/components/Layout';
 import theme from '@/constants/theme';
 import meta from '@/constants/meta';
 
-//TODO If you need animation, uncomment (site with animations https://michalsnik.github.io/aos/)
+// TODO: If you need animation, uncomment (site with animations https://michalsnik.github.io/aos/)
 
 // import AOS from 'aos';
 // import 'aos/dist/aos.css';
