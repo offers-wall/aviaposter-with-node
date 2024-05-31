@@ -1,5 +1,15 @@
 import type { CookieConsentConfig } from 'vanilla-cookieconsent';
 
+function generateUserId() {
+  return Math.random().toString(36).substr(2, 9);
+}
+
+function setUserIdCookie() {
+  const userId = generateUserId();
+  document.cookie = `userId=${userId}; expires=Sun, 1 Jan 2023 00:00:00 UTC; path=/`;
+  return userId;
+}
+
 const pluginConfig: CookieConsentConfig = {
   guiOptions: {
     consentModal: {
@@ -16,17 +26,22 @@ const pluginConfig: CookieConsentConfig = {
     },
   },
 
-  // onFirstConsent: function () {
-  //   console.log('onFirstAction fired');
-  // },
+  onFirstConsent: function () {
+    console.log('onFirstAction fired');
+  },
 
-  // onConsent: function ({ cookie }) {
-  //   console.log('onConsent fired ...');
-  // },
+  onConsent: function ({ cookie }) {
+    console.log('onConsent fired ...');
+    console.log(cookie);
+    cookie.data = setUserIdCookie(); 
+  },
 
-  // onChange: function ({ changedCategories, cookie }) {
-  //   console.log('onChange fired ...');
-  // },
+  onChange: function ({ changedCategories, cookie }) {
+    console.log('onChange fired ...');
+    console.log(cookie);
+
+    cookie.data = setUserIdCookie(); 
+  },
 
   categories: {
     necessary: {

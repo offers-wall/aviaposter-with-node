@@ -1,7 +1,18 @@
 import { run, reset, hide, acceptCategory, showPreferences } from 'vanilla-cookieconsent';
 import pluginConfig from './CookieConsentConfig';
 
+const generateRandomId = () => {
+  return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+};
+
 const acceptAndHide = (acceptType: string | string[]) => {
+  const userId = generateRandomId();
+  const expires = new Date();
+  expires.setTime(expires.getTime() + 7 * 24 * 60 * 60 * 1000);
+
+  console.log(`Current cookies: ${document.cookie}`);
+
+  document.cookie = `UserId=${userId};expires=${expires.toUTCString()};path=/`;
   acceptCategory(acceptType);
   hide();
 };
