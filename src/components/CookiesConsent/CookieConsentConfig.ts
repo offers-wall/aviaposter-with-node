@@ -1,5 +1,3 @@
-import type { CookieConsentConfig } from 'vanilla-cookieconsent';
-
 function generateUserId() {
   return Math.random().toString(36).substr(2, 9);
 }
@@ -10,19 +8,21 @@ function setUserIdCookie() {
   return userId;
 }
 
+import { CookieConsentConfig } from 'vanilla-cookieconsent';
+
 const pluginConfig: CookieConsentConfig = {
   guiOptions: {
     consentModal: {
       layout: 'box',
-      position: 'bottom right',
-      equalWeightButtons: true,
+      position: 'bottom left',
       flipButtons: false,
+      equalWeightButtons: true,
     },
     preferencesModal: {
-      layout: 'box',
-      position: 'left',
-      equalWeightButtons: true,
+      layout: 'bar',
+      position: 'right',
       flipButtons: false,
+      equalWeightButtons: true,
     },
   },
 
@@ -33,14 +33,13 @@ const pluginConfig: CookieConsentConfig = {
   onConsent: function ({ cookie }) {
     console.log('onConsent fired ...');
     console.log(cookie);
-    cookie.data = setUserIdCookie(); 
+    cookie.data = setUserIdCookie();
   },
 
   onChange: function ({ changedCategories, cookie }) {
     console.log('onChange fired ...');
     console.log(cookie);
-
-    cookie.data = setUserIdCookie(); 
+    cookie.data = setUserIdCookie();
   },
 
   categories: {
@@ -61,7 +60,6 @@ const pluginConfig: CookieConsentConfig = {
 
   language: {
     default: 'en',
-
     translations: {
       en: {
         consentModal: {
@@ -71,12 +69,9 @@ const pluginConfig: CookieConsentConfig = {
           acceptAllBtn: 'Accept all',
           acceptNecessaryBtn: 'Reject all',
           showPreferencesBtn: 'Manage preferences',
-
-          // closeIconLabel: 'Close',
-
           footer: `
             <a href="#link">Privacy Policy</a>
-            <a href="#link">Impressum</a>
+            <a href="#link">Terms and Conditions</a>
           `,
         },
         preferencesModal: {
@@ -110,13 +105,15 @@ const pluginConfig: CookieConsentConfig = {
                   {
                     name: '_ga',
                     domain: 'Google Analytics',
-                    description: 'Cookie set by <a href="#das">Google Analytics</a>.',
+                    description:
+                      'Cookie set by <a href="https://support.google.com/analytics/answer/12159447?hl=en">Google Analytics</a>.',
                     expiration: 'Expires after 12 days',
                   },
                   {
                     name: '_gid',
                     domain: 'Google Analytics',
-                    description: 'Cookie set by <a href="#das">Google Analytics</a>',
+                    description:
+                      'Cookie set by <a href="https://support.google.com/analytics/answer/12159447?hl=en">Google Analytics</a>',
                     expiration: 'Session',
                   },
                 ],
