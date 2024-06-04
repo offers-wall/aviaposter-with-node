@@ -79,9 +79,7 @@ const theme = createTheme({
         variant: 'contained',
       },
       styleOverrides: {
-        root: {
-          // borderRadius: '',
-        },
+        root: {},
       },
     },
     MuiCssBaseline: {

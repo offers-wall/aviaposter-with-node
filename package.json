@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next-export-optimize-images && next-nginx-routes && npm run deploy-ftp",
+    "build": "next build && next-sitemap && next-export-optimize-images && next-nginx-routes && npm run deploy-ftp",
     "deploy-ftp": "node deploy-ftp.mjs",
     "start": "next start",
     "lint": "next lint",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.{ts,tsx,js,jsx}' --write"
+
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
@@ -27,6 +28,7 @@
     "modern-normalize": "^2.0.0",
     "next": "14.1.0",
     "next-export-optimize-images": "^3.3.0",
+    "next-sitemap": "^4.2.3",
     "react": "^18",
     "react-cookie-consent": "^9.0.0",
     "react-dom": "^18",
