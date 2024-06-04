@@ -1,7 +1,7 @@
+import 'vanilla-cookieconsent/dist/cookieconsent.css';
 import { useEffect } from 'react';
 import * as CookieConsent from 'vanilla-cookieconsent';
 import pluginConfig from './CookieConsentConfig';
-import 'vanilla-cookieconsent/dist/cookieconsent.css';
 
 export default function CookiesConsent() {
   useEffect(() => {
@@ -9,5 +9,5 @@ export default function CookiesConsent() {
     CookieConsent.show(true);
   }, []);
 
-  return <></>;
+  return null;
 }

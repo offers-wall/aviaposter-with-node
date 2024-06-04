@@ -1,3 +1,5 @@
+import { CookieConsentConfig } from 'vanilla-cookieconsent';
+
 function generateUserId() {
   return Math.random().toString(36).substr(2, 9);
 }
@@ -5,10 +7,9 @@ function generateUserId() {
 function setUserIdCookie() {
   const userId = generateUserId();
   document.cookie = `userId=${userId}; expires=Sun, 1 Jan 2023 00:00:00 UTC; path=/`;
+
   return userId;
 }
-
-import { CookieConsentConfig } from 'vanilla-cookieconsent';
 
 const pluginConfig: CookieConsentConfig = {
   guiOptions: {
@@ -26,20 +27,12 @@ const pluginConfig: CookieConsentConfig = {
     },
   },
 
-  onFirstConsent: function () {
-    console.log('onFirstAction fired');
+  onConsent({ cookie }) {
+    return { ...cookie, data: setUserIdCookie() };
   },
 
-  onConsent: function ({ cookie }) {
-    console.log('onConsent fired ...');
-    console.log(cookie);
-    cookie.data = setUserIdCookie();
-  },
-
-  onChange: function ({ changedCategories, cookie }) {
-    console.log('onChange fired ...');
-    console.log(cookie);
-    cookie.data = setUserIdCookie();
+  onChange({ cookie }) {
+    return { ...cookie, data: setUserIdCookie() };
   },
 
   categories: {
@@ -65,13 +58,13 @@ const pluginConfig: CookieConsentConfig = {
         consentModal: {
           title: "Hello traveller, it's cookie time!",
           description:
-            'Our website uses tracking cookies to understand how you interact with it. The tracking will be enabled only if you accept explicitly. <a href="#privacy-policy" data-cc="show-preferencesModal" class="cc__link">Manage preferences</a>',
+            'Our website uses tracking cookies to understand how you interact with it. The tracking will be enabled only if you accept explicitly. <a href="/privacy-policy" data-cc="show-preferencesModal" class="cc__link">Manage preferences</a>',
           acceptAllBtn: 'Accept all',
           acceptNecessaryBtn: 'Reject all',
           showPreferencesBtn: 'Manage preferences',
           footer: `
-            <a href="#link">Privacy Policy</a>
-            <a href="#link">Terms and Conditions</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms-and-conditions">Terms and Conditions</a>
           `,
         },
         preferencesModal: {
@@ -84,7 +77,7 @@ const pluginConfig: CookieConsentConfig = {
             {
               title: 'Cookie Usage',
               description:
-                'I use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="#" class="cc__link">privacy policy</a>.',
+                'I use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="/privacy-policy" class="cc__link">privacy policy</a>.',
             },
             {
               title: 'Strictly necessary cookies',
@@ -122,7 +115,7 @@ const pluginConfig: CookieConsentConfig = {
             {
               title: 'More information',
               description:
-                'For any queries in relation to my policy on cookies and your choices, please <a class="cc__link" href="#yourdomain.com">contact me</a>.',
+                'For any queries in relation to my policy on cookies and your choices, please <a class="cc__link" href="/contact-us">contact us</a>.',
             },
           ],
         },

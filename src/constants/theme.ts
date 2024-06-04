@@ -1,7 +1,7 @@
-import { createTheme, responsiveFontSizes } from "@mui/material/styles";
-import { Inter } from "next/font/google";
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 const theme = createTheme({
   breakpoints: {
@@ -76,7 +76,7 @@ const theme = createTheme({
     // },
     MuiButton: {
       defaultProps: {
-        variant: "contained",
+        variant: 'contained',
       },
       styleOverrides: {
         root: {
@@ -87,18 +87,18 @@ const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         a: {
-          color: "inherit",
-          textDecoration: "none",
-          "&:hover": {
-            color: "inherit",
+          color: 'inherit',
+          textDecoration: 'none',
+          '&:hover': {
+            color: 'inherit',
           },
         },
-        address: { fontStyle: "normal" },
+        address: { fontStyle: 'normal' },
         img: {
-          height: "auto",
-          display: "block",
+          height: 'auto',
+          display: 'block',
         },
-        ul: { margin: 0, padding: 0, listStyle: "none" },
+        ul: { margin: 0, padding: 0, listStyle: 'none' },
       },
     },
   },
