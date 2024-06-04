@@ -1,5 +1,5 @@
 {
-"extends": [
+  "extends": [
     "next/core-web-vitals",
     "eslint:recommended",
     "plugin:react/recommended",
@@ -13,7 +13,7 @@
     "es2021": true
   },
   "parser": "@typescript-eslint/parser",
-    "parserOptions": {
+  "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
     "ecmaFeatures": {
@@ -21,10 +21,7 @@
     },
     "project": ["./tsconfig.json"]
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint"
-  ],
+  "plugins": ["react", "@typescript-eslint"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
@@ -35,30 +32,28 @@
           {
             "ignorePackages": true,
             "pattern": {
-            "js": "never",
-            "jsx": "never",
-            "ts": "never",
-            "tsx": "never",
-            "mjs": "never",
-            "json": "never"
+              "js": "never",
+              "jsx": "never",
+              "ts": "never",
+              "tsx": "never",
+              "mjs": "never",
+              "json": "never"
+            }
           }
-        }
-      ],
-      "import/no-extraneous-dependencies": [2, {"devDependencies": true}],
-      "import/prefer-default-export": 0,
-      "newline-before-return": 2,
-      "no-restricted-exports": [ 2,
-      { "restrictDefaultExports": { "defaultFrom": false } }
-      ],
-      "no-shadow": 0,
-      "@typescript-eslint/no-shadow": 2,
-      "no-trailing-spaces": 2,
-      "react/jsx-filename-extension": [2, { "extensions": [".tsx"] }],
-      "react/jsx-props-no-spreading": 0,
-      "react/no-unknown-property": [2, { "ignore": ["css"] }],
-      "react/react-in-jsx-scope": 0,
-      "react/require-default-props": 2,
-      "@typescript-eslint/no-unused-vars": 2
+        ],
+        "import/no-extraneous-dependencies": [2, { "devDependencies": true }],
+        "import/prefer-default-export": 0,
+        "newline-before-return": 2,
+        "no-restricted-exports": [2, { "restrictDefaultExports": { "defaultFrom": false } }],
+        "no-shadow": 0,
+        "@typescript-eslint/no-shadow": 2,
+        "no-trailing-spaces": 2,
+        "react/jsx-filename-extension": [2, { "extensions": [".tsx"] }],
+        "react/jsx-props-no-spreading": 0,
+        "react/no-unknown-property": [2, { "ignore": ["css"] }],
+        "react/react-in-jsx-scope": 0,
+        "react/require-default-props": 2,
+        "@typescript-eslint/no-unused-vars": 2
       }
     }
   ],

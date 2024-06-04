@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Lottie from "react-lottie";
-import * as generalClasses from "@/styles/general";
-import * as classes from "./styles";
+import Link from 'next/link';
+import Lottie from 'react-lottie';
+import * as generalClasses from '@/styles/general';
+import * as classes from './styles';
 
 interface Props {
   // This type is defined in 'react-lottie' docs
@@ -22,8 +22,7 @@ export default function Animation({ className, animationData, path }: Props) {
     <Link
       className={className}
       css={[classes.animationBox, generalClasses.desktop]}
-      href={path}
-    >
+      href={path}>
       <Lottie options={DEFAULT_OPTIONS} />
     </Link>
   );
