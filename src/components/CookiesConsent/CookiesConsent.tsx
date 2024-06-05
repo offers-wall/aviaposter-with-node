@@ -5,8 +5,11 @@ import pluginConfig from './CookieConsentConfig';
 
 export default function CookiesConsent() {
   useEffect(() => {
-    CookieConsent.run(pluginConfig);
-    CookieConsent.show(true);
+    const userData = localStorage.getItem('userData');
+    if (!userData) {
+      CookieConsent.run(pluginConfig);
+      CookieConsent.show(true);
+    }
   }, []);
 
   return null;
