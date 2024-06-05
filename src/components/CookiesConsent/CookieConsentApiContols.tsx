@@ -10,8 +10,6 @@ const acceptAndHide = (acceptType: string | string[]) => {
   const expires = new Date();
   expires.setTime(expires.getTime() + 7 * 24 * 60 * 60 * 1000);
 
-  console.log(`Current cookies: ${document.cookie}`);
-
   document.cookie = `UserId=${userId};expires=${expires.toUTCString()};path=/`;
   acceptCategory(acceptType);
   hide();

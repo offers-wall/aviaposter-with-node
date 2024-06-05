@@ -1,3 +1,4 @@
+import { CookieConsentConfig } from 'vanilla-cookieconsent';
 function generateUserId() {
   return Math.random().toString(36).substr(2, 9);
 }
@@ -7,8 +8,6 @@ function setUserIdCookie() {
   document.cookie = `userId=${userId}; expires=Sun, 1 Jan 2023 00:00:00 UTC; path=/`;
   return userId;
 }
-
-import { CookieConsentConfig } from 'vanilla-cookieconsent';
 
 const pluginConfig: CookieConsentConfig = {
   guiOptions: {
@@ -27,13 +26,14 @@ const pluginConfig: CookieConsentConfig = {
   },
 
   onFirstConsent: function () {
-    console.log('onFirstAction fired');
+    // console.log('onFirstAction fired');
   },
 
   onConsent: function ({ cookie }) {
-    console.log('onConsent fired ...');
-    console.log(cookie);
+   // console.log('onConsent fired ...');
+   // console.log(cookie);
     cookie.data = setUserIdCookie();
+    localStorage.setItem('userData', setUserIdCookie());
   },
 
   onChange: function ({ changedCategories, cookie }) {

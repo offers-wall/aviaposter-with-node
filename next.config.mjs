@@ -14,7 +14,7 @@ const nextConfig = withExportImages({
     ],
   },
   // TODO: Uncomment it for static export - https://nextjs.org/docs/app/building-your-application/deploying/static-exports
-  // output: 'export',
+  output: 'export',
 });
 
 export default nextConfig;
