@@ -1,8 +1,9 @@
-// TODO: Add Submission Success
+import SubmissionSuccessPage from '@/components/Outlet/SubmissionSuccessPage';
+
 export default function SubmissionSuccess() {
-  // return (
-  //   <main>
-  //     <section>Submission Success</section>
-  //   </main>
-  // );
+  return (
+    <section>
+      <SubmissionSuccessPage />
+    </section>
+  );
 }

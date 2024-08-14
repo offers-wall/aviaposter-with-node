@@ -1,9 +1,8 @@
-// TODO: Add meta data
 const meta = {
-  description: '',
+  description: 'Buy best posters ever in Aviaposter',
   faviconPath: '/favicon.ico',
-  lang: '',
-  title: '',
+  lang: 'en',
+  title: 'Aviaposter',
 };
 
 export default meta;

@@ -6,24 +6,14 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import Layout from '@/components/Layout';
 import theme from '@/constants/theme';
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
+import paypalScriptOptions from '@/constants/paypalScriptOptions';
 import meta from '@/constants/meta';
-
-// TODO: If you need animation, uncomment (site with animations https://michalsnik.github.io/aos/)
-
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
-// import { useEffect } from 'react';
+import ShoppingCartProvider from '@/components/Outlet/CartPage/ShoppingCartProvider';
+import { ToastContainer } from 'react-toastify';
 
 export default function MyApp(props: AppProps) {
   const { Component, pageProps } = props;
-
-  // useEffect(() => {
-  //   AOS.init({
-  //     easing: 'ease-out-cubic',
-  //     once: true,
-  //     offset: 50,
-  //   });
-  // }, []);
 
   return (
     <AppCacheProvider {...props}>
@@ -49,9 +39,14 @@ export default function MyApp(props: AppProps) {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <ShoppingCartProvider initialValue={[]}>
+          <Layout>
+            <PayPalScriptProvider options={paypalScriptOptions}>
+              <Component {...pageProps} />
+            </PayPalScriptProvider>
+          </Layout>
+        </ShoppingCartProvider>
+        <ToastContainer />
       </ThemeProvider>
     </AppCacheProvider>
   );

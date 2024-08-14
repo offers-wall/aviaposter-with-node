@@ -21,21 +21,21 @@ const theme = createTheme({
     //   hover: '',
     //   selected: '',
     // },
-    // background: {
-    //   default: '',
-    //   paper: '',
-    // },
+    background: {
+      default: '#252525',
+      paper: '#828267',
+    },
     // divider: '',
-    // primary: {
-    //   main: '',
-    //   light: '',
-    //   dark: '',
-    // },
-    // secondary: {
-    //   main: '',
-    //   light: '',
-    //   dark: '',
-    // },
+    primary: {
+      main: '#BB0016',
+      // light: '',
+      // dark: '',
+    },
+    secondary: {
+      main: '#ffffff',
+      // light: '',
+      // dark: '',
+    },
     // error: {
     //   main: '',
     //   light: '',
@@ -56,11 +56,11 @@ const theme = createTheme({
     //   light: '',
     //   dark: '',
     // },
-    // text: {
-    //   primary: '',
-    //   secondary: '',
-    //   disabled: '',
-    // },
+    text: {
+      primary: '#000000',
+      secondary: '#FFFFFF',
+      // disabled: '',
+    },
   },
   // spacing: 0,
   typography: {
@@ -79,7 +79,9 @@ const theme = createTheme({
         variant: 'contained',
       },
       styleOverrides: {
-        root: {},
+        root: {
+          borderRadius: '4px',
+        },
       },
     },
     MuiCssBaseline: {

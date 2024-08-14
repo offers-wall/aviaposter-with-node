@@ -8,7 +8,6 @@ const nextConfig = withExportImages({
   experimental: {
     optimizePackageImports: ['@mui/icons-material', '@mui/material', 'formik-mui', 'swiper'],
   },
-  // TODO: Uncomment it for static export - https://nextjs.org/docs/app/building-your-application/deploying/static-exports
   output: 'export',
 });
 

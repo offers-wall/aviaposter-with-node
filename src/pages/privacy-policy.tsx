@@ -1,8 +1,9 @@
-// TODO: Add Privacy Policy
-export default function PrivacyPolicy() {
-  // return (
-  //   <main>
-  //     <section>Privacy Policy</section>
-  //   </main>
-  // );
+import PrivacyPolicy from '@/components/Outlet/PrivacyPolicyPage';
+
+export default function PrivacyPolicyPage() {
+  return (
+    <section>
+      <PrivacyPolicy />
+    </section>
+  );
 }

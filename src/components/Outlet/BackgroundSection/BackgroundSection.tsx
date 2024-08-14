@@ -9,7 +9,6 @@ interface Props {
   priority?: boolean;
 }
 
-// TODO: Use it for sections/pages with background instead using background property in CSS
 export default function BackgroundSection({ priority, className, children, path }: Props) {
   return (
     <div className={className}>

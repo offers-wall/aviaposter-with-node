@@ -55,7 +55,26 @@ export const outletMargin = (theme: Theme) => css`
   }
 `;
 
+export const outletMarginTop = (theme: Theme) => css`
+  ${theme.breakpoints.up('sm')} {
+    margin-top: 5%;
+  }
+
+  ${theme.breakpoints.down('sm')} {
+    margin-top: 15px;
+  }
+`;
+
+export const outletMarginBottom = (theme: Theme) => css`
+  ${theme.breakpoints.up('sm')} {
+    margin-bottom: 5%;
+  }
+
+  ${theme.breakpoints.down('sm')} {
+    margin-bottom: 15px;
+  }
+`;
+
 export const sectionWithBackgroundImage = css`
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 `;

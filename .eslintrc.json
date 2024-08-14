@@ -26,6 +26,7 @@
     {
       "files": ["*.ts", "*.tsx"],
       "rules": {
+        "import/no-cycle": "off",
         "consistent-return": 2,
         "import/extensions": [
           2,

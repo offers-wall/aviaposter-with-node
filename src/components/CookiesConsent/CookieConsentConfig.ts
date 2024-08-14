@@ -1,4 +1,5 @@
 import { CookieConsentConfig } from 'vanilla-cookieconsent';
+
 function generateUserId() {
   return Math.random().toString(36).substr(2, 9);
 }
@@ -26,21 +27,15 @@ const pluginConfig: CookieConsentConfig = {
     },
   },
 
-  onFirstConsent: function () {
-    // console.log('onFirstAction fired');
-  },
-
-  onConsent: function ({ cookie }) {
-   // console.log('onConsent fired ...');
-   // console.log(cookie);
-    cookie.data = setUserIdCookie();
+  onConsent({ cookie }) {
+    const newCookie = { ...cookie };
+    newCookie.data = setUserIdCookie();
     localStorage.setItem('userData', setUserIdCookie());
   },
 
-  onChange: function ({ changedCategories, cookie }) {
-    console.log('onChange fired ...');
-    console.log(cookie);
-    cookie.data = setUserIdCookie();
+  onChange({ cookie }) {
+    const newCookie = { ...cookie };
+    newCookie.data = setUserIdCookie();
   },
 
   categories: {
