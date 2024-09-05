@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://m.theskyaviator.com
+
+# Sitemaps
+Sitemap: https://m.theskyaviator.com/sitemap.xml
