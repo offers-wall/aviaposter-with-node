@@ -1,6 +1,6 @@
 export enum BackgroundPaths {
-  Desktop = 'images/backgrounds/desktop_background.jpg',
-  Mobile = 'images/backgrounds/mobile_background.jpg',
+  Desktop = '/images/backgrounds/desktop_background.jpg',
+  Mobile = '/images/backgrounds/mobile_background.jpg',
 }
 
 export interface FirstBlock {

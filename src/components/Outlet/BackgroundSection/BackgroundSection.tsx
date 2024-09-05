@@ -17,7 +17,6 @@ export default function BackgroundSection({ priority, className, children, path 
           priority={priority}
           alt='background'
           src={path}
-          placeholder='blur'
           fill
           style={{
             objectFit: 'cover',
