@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import { Item } from '@/components/Outlet/BestPositions/itemsData';
+import { Item } from '@/components/Outlet/Items/itemsData';
 import {
   ShoppingCartItemType,
   ShoppingCartStateType,
